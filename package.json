@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "browsersync": "browser-sync start --serveStatic './' --reload-delay 1000 --reload-debounce 1000 --files './styles/dist/*.css, ./src/'**/*.js",
+    "browsersync": "browser-sync start --server --port 3333 './' --reload-delay 1000 --reload-debounce 1000 --files './styles/dist/*.css'",
     "css:autoprefixer": "postcss --use autoprefixer -r --no-map ./styles/dist/styles.css",
     "css:compile:dev": "node-sass -o ./styles/dist ./styles/src/styles.scss && npm run css:autoprefixer",
     "css:compile:dist": "node-sass -o ./styles/dist ./styles/src/styles.scss && npm run css:autoprefixer && npm run css:minify",
@@ -12,8 +12,7 @@
     "css:watch": "onchange -w -d 1000 './styles/src/**/*.scss' -- npm run css:compile:dev",
     "js:compile": "r.js -o build.js",
     "dev": "npm run browsersync & npm run css:watch",
-    "dist": "npm run css:compile:dist && npm run js:compile",
-    "serve": "ws"
+    "dist": "npm run css:compile:dist && npm run js:compile"
   },
   "author": "Alessandro Muraro",
   "license": "ISC",
@@ -35,8 +34,7 @@
     "stylelint-scss": "^3.2.0"
   },
   "dependencies": {
-    "8": "0.0.1",
-    "local-web-server": "^2.6.0"
+    "8": "0.0.1"
   },
   "browserslist": [
     "> 1%",
