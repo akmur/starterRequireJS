@@ -9,8 +9,7 @@
     <title>Test page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./styles/sakura.css">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/dist/styles.css">
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
   </head>
   <body>
@@ -21,5 +20,13 @@
       <h1 class="h1" data-js-clickable>Test</h1>
     </main>
   </body>
-  <script data-main="js/main" src="js/vendor/require.js"></script>
+  <script>
+    if (location.href.indexOf('localhost') > -1) {
+      document.write('<script data-main="js/src/main" src="js/src/vendor/require.js"><\/script>');
+    } else {
+      document.write('<script src="js/dist/main.js"><\/script>');
+    }
+  </script>
+
+
 </html>
