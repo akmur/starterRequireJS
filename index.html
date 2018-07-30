@@ -21,7 +21,7 @@
     </main>
   </body>
   <script>
-    if (location.href.indexOf('localhost') > -1) {
+    if ((location.href.indexOf(':3333') > -1)) {
       document.write('<script data-main="js/src/main" src="js/src/vendor/require.js"><\/script>');
     } else {
       document.write('<script src="js/dist/main.js"><\/script>');
