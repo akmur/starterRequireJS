@@ -11,8 +11,12 @@
     "css:minify": "cssnano ./styles/dist/styles.css ./styles/dist/styles.css",
     "css:watch": "onchange -w -d 1000 './styles/src/**/*.scss' -- npm run css:compile:dev",
     "dev": "npm run browsersync & npm run css:watch",
+<<<<<<< HEAD
     "dist": "npm run css:compile:dist && npm run js:compile",
     "js:compile": "r.js -o build.js"
+=======
+    "dist": "npm run css:compile:dist && npm run js:compile"
+>>>>>>> 23b8bb4756aa976e97a7dcbc25ecc0061d12607d
   },
   "author": "Alessandro Muraro",
   "license": "ISC",
